@@ -7,6 +7,7 @@ To reproduce the results of the Sepsis event log, the scripts are ready to be ex
 To reproduce the MIMIC results, one needs access to the [MIMIC-IV](https://mimic.mit.edu/iv/) database, which requires CITI training. Usually, that does not take much more than a day and access is granted within a week. If access is granted, the event log can be retrieved. We implemented an [event log generation tool](https://github.com/bptlab/mimic-log-extraction/tree/main) for MIMIC-IV, which allows to provide a config file as an input, which results in an ready-to-use event log. Use the [config file](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/MIMIC_LOG_CONFIG.yml) in this repository to retrieve an event log by executing the following command: ```python extract_log.py --config MIMIC_Config.yml```. Some post-processing is required, which is conducted in [this jupyter notebook](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/0_MIMIC-IV_Generation.ipynb). After that, the other jupyter notebooks can be executed with the MIMIC event log.
 
 
+As mentioned in the paper, the following presents detailed results regarding the detection of recurring activities and change pattern results for the MIMIC event log. First, the results of the vectors dfr/dpr representing the directly follows and directly preceding ratios for all activities in MIMIC and Sepsis. The repetition score is then the sum of one row, which are also illustrated below. The matrices are supposed to be read row-wise. So 
 
 
 |![alt text](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/Evaluation/dfr_MIMIC.PNG?raw=true)|
@@ -36,12 +37,12 @@ To reproduce the MIMIC results, one needs access to the [MIMIC-IV](https://mimic
 |:--:| 
 | *Enhanced process model with change patterns detected on the raw MIMIC event log* |
 
-![alt text](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/Evaluation/matrix_MIMIC.PNG?raw=true)
-|:--:| 
-| *Change Pattern Matrix of selected event attributes and relations independent of a trace variant* |
 
 ![alt text](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/Evaluation/MIMIC_PM.png?raw=true)
 |:--:| 
 | *Enhanced process model with change patterns detected on the raw Sepsis event log* |
 
+![alt text](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/Evaluation/matrix_MIMIC.PNG?raw=true)
+|:--:| 
+| *Change Pattern Matrix of selected event attributes and relations independent of a trace variant* |
 

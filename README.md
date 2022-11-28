@@ -8,7 +8,7 @@ To reproduce the results of the Sepsis event log, the scripts are ready to be ex
 
 To reproduce the MIMIC results, one needs access to the [MIMIC-IV](https://mimic.mit.edu/iv/) database, which requires CITI training. Usually, that does not take much more than a day and access is granted within a week. If access is granted, the event log can be retrieved. We implemented an [event log generation tool](https://github.com/bptlab/mimic-log-extraction/tree/main) for MIMIC-IV, which allows to provide a config file as an input, which results in an ready-to-use event log. Use the [config file](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/MIMIC_LOG_CONFIG.yml) in this repository to retrieve an event log by executing the following command: ```python extract_log.py --config MIMIC_Config.yml```. Some post-processing is required, which is conducted in [this jupyter notebook](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/0_MIMIC-IV_Generation.ipynb). After that, the other jupyter notebooks can be executed with the MIMIC event log.
 
-The implementation is not limited to the above mentioned event logs and can be used with all event logs. It should be noted, that the event logs require recurring activities to make sense for further analysis. It is only required, that the event logs are provided as a csv file and that the mandatory attributes case id, activity, and timestamp are renamed in the [first jupyter notebook](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/1_Repetitive_Activity_Detection_Context_Identification.ipynb) accordingly. 
+The implementation is not limited to the above mentioned event logs and can be used with all event logs. It should be noted, that the event logs require recurring activities to make sense for further analysis. It is only required, that the event logs are provided as a .csv file and that the mandatory attributes case id, activity, and timestamp are renamed in the [first jupyter notebook](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/1_Repetitive_Activity_Detection_Context_Identification.ipynb) accordingly. 
 
 ## Detailed Evaluation
 
@@ -25,11 +25,11 @@ As mentioned in the paper, the following presents detailed results regarding the
 
 ![alt text](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/Evaluation/dfr_Sepsis.PNG?raw=true)
 |:--:| 
-| *Tab. 3 Directly-Follows ratios for activities in MIMIC* |
+| *Tab. 3 Directly-Follows ratios for activities in Sepsis* |
 
 ![alt text](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/Evaluation/dpr_Sepsis.PNG?raw=true)
 |:--:| 
-| *Tab. 4 Directly-Precedes ratios for activities in MIMIC* |
+| *Tab. 4 Directly-Precedes ratios for activities in Sepsis* |
 
 Tab. 5 and Tab. 6 show the repetition scores, which are the average scores of the rows in the matrices.
 
@@ -44,10 +44,11 @@ The following figures show detailed results of the change pattern detection in M
 |:--:| 
 | *Fig. 1 Enhanced process model with change patterns detected on the raw MIMIC event log* |
 
+Fig. 2 shows an enhanced process model with a few change patterns identified based on the transformed event log. As for Sepsis, more change patterns with increased effect sizes could be detected. Especially the measurements associated to the "Dialysis" activities have high effect sizes (0.78-0.88), where Blood Urea Nitrogene (BUN) decreases after dialysis and increases again, before "Dialysis" is conducted again. This looping pattern could not be identified before. Furthermore, the process mostly starts with measurements before Invasive Ventilation is conducted. It can also be seen, that "Invasive Ventilation" is conducted until the end of treatment and "Dialysis" is repeated multiple times during treatment.  
 
 ![alt text](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/Evaluation/MIMIC_PM.png?raw=true)
 |:--:| 
-| *Fig. 2 Enhanced process model with change patterns detected on the raw Sepsis event log* |
+| *Fig. 2 Enhanced process model with change patterns detected on the transformed MIMIC event log* |
 
 ![alt text](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/Evaluation/matrix_MIMIC.PNG?raw=true)
 |:--:| 

@@ -10,7 +10,7 @@ To reproduce the MIMIC results, one needs access to the [MIMIC-IV](https://mimic
 
 The implementation is not limited to the above mentioned event logs and can be used with all event logs. It should be noted, that the event logs require recurring activities to make sense for further analysis. It is only required, that the event logs are provided as a .csv file and that the mandatory attributes case id, activity, and timestamp are renamed in the [first jupyter notebook](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/1_Repetitive_Activity_Detection_Context_Identification.ipynb) accordingly. 
 
-## Detailed Evaluation
+## Detailed Evaluation Results
 
 As mentioned in the paper, the following presents detailed results regarding the detection of recurring activities and change pattern results for the MIMIC event log. First, the results of the vectors dfr/dpr representing the directly follows and directly preceding ratios for all activities in MIMIC and Sepsis are shown. The repetition score is then the sum of one row, which are also illustrated below. The matrices are supposed to be read row-wise. For example, the "Measurement" activity in Tab. 1 is followed by "START Invasive Ventilation" in 84.5% of the occurences of "START Invasive Ventilation". Tab. 1 and Tab. 2 show, that the "Measurement" is mostly conducted before the START and after the END of a treatment activity. Tab. 3 and Tab. 4 show the respective results for Sepsis. In Sepsis, "CRP" and "Leucocytes" are almost never following "Release A", but precede it relatively often.
 
@@ -44,11 +44,13 @@ The following figures show detailed results of the change pattern detection in M
 |:--:| 
 | *Fig. 1 Enhanced process model with change patterns detected on the raw MIMIC event log* |
 
-Fig. 2 shows an enhanced process model with a few change patterns identified based on the transformed event log. As for Sepsis, more change patterns with increased effect sizes could be detected. Especially the measurements associated to the "Dialysis" activities have high effect sizes (0.78-0.88), where Blood Urea Nitrogene (BUN) decreases after dialysis and increases again, before "Dialysis" is conducted again. This looping pattern could not be identified before. Furthermore, the process mostly starts with measurements before Invasive Ventilation is conducted. It can also be seen, that "Invasive Ventilation" is conducted until the end of treatment and "Dialysis" is repeated multiple times during treatment.  
+Fig. 2 illustrates an enhanced process model with a few change patterns identified based on the transformed event log. As for Sepsis, more change patterns with increased effect sizes could be detected. Especially the measurements associated to the "Dialysis" activities have high effect sizes (0.78-0.88), where Blood Urea Nitrogene (BUN) decreases after dialysis and increases again, before "Dialysis" is conducted again. This looping pattern could not be identified before. Furthermore, the process mostly starts with measurements before Invasive Ventilation is conducted. It can also be seen, that "Invasive Ventilation" is conducted until the end of treatment and "Dialysis" is repeated multiple times during treatment. Thus, the structure of the proces simproved as well and more insights regarding changing patterns could be derived.
 
 ![alt text](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/Evaluation/MIMIC_PM.png?raw=true)
 |:--:| 
 | *Fig. 2 Enhanced process model with change patterns detected on the transformed MIMIC event log* |
+
+Fig. 3 shows another view of the change detection cube, which allows to see two-dimensional slices of the change detection cube.
 
 ![alt text](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/Evaluation/matrix_MIMIC.PNG?raw=true)
 |:--:| 

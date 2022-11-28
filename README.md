@@ -26,6 +26,8 @@ As mentioned in the paper, the following presents detailed results regarding the
 |:--:| 
 | *Tab. 4 Directly-Precedes ratios for activities in MIMIC* |
 
+Tab. 5 and Tab. 6 show the repetition scores, which are the average scores of the rows in the matrices.
+
 ![alt text](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/Evaluation/rep_score_MIMIC.PNG?raw=true)|![alt text](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/Evaluation/rep_score_Sepsis.PNG?raw=true)
 :-------------------------:|:-------------------------:
  *Tab. 5 Repetition scores for all activities in MIMIC* | *Tab. 6 Repetition scores for all activities in Sepsis* 

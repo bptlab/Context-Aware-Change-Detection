@@ -44,13 +44,13 @@ The following figures show detailed results of the change pattern detection in M
 |:--:| 
 | *Fig. 1 Enhanced process model with change patterns detected on the raw MIMIC event log* |
 
-Fig. 2 illustrates an enhanced process model with a few change patterns identified based on the transformed event log. As for Sepsis, more change patterns with increased effect sizes could be detected. Especially the measurements associated to the "Dialysis" activities have high effect sizes (0.78-0.88), where Blood Urea Nitrogene (BUN) decreases after dialysis and increases again, before "Dialysis" is conducted again. This looping pattern could not be identified before. Furthermore, the process mostly starts with measurements before Invasive Ventilation is conducted. It can also be seen, that "Invasive Ventilation" is conducted until the end of treatment and "Dialysis" is repeated multiple times during treatment. Thus, the structure of the proces simproved as well and more insights regarding changing patterns could be derived.
+Fig. 2 illustrates an enhanced process model with a few change patterns identified based on the transformed event log. As for Sepsis, more change patterns with increased effect sizes could be detected. Especially the measurements associated to the "Dialysis" activities have high effect sizes (0.78-0.88), where Blood Urea Nitrogene (BUN) decreases after dialysis and increases again, before "Dialysis" is conducted again. This looping pattern could not be identified before. Furthermore, the process mostly starts with measurements before Invasive Ventilation is conducted. It can also be seen, that "Invasive Ventilation" is conducted until the end of treatment and "Dialysis" is repeated multiple times during treatment. Thus, the structure of the process model improved as well and more insights regarding changing patterns could be derived.
 
 ![alt text](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/Evaluation/MIMIC_PM.png?raw=true)
 |:--:| 
 | *Fig. 2 Enhanced process model with change patterns detected on the transformed MIMIC event log* |
 
-Fig. 3 shows another view of the change detection cube, which allows to see two-dimensional slices of the change detection cube.
+Fig. 3 shows another view of the change detection cube, which allows to see two-dimensional slices of the it. On the X-axes, three event attributes, and on the Y-axes, seven selected eventually follows relations are shown. There are some more, as seen in the list above, which can be explored with the [UI](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/3_UI.ipynb) jupyter notebook. Some of the illustrated change patterns in the process model can be seen here again and some more. The values in the cells represent the respective test statistic RBC. 
 
 ![alt text](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/Evaluation/matrix_MIMIC.PNG?raw=true)
 |:--:| 

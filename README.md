@@ -7,42 +7,42 @@ To reproduce the results of the Sepsis event log, the scripts are ready to be ex
 To reproduce the MIMIC results, one needs access to the [MIMIC-IV](https://mimic.mit.edu/iv/) database, which requires CITI training. Usually, that does not take much more than a day and access is granted within a week. If access is granted, the event log can be retrieved. We implemented an [event log generation tool](https://github.com/bptlab/mimic-log-extraction/tree/main) for MIMIC-IV, which allows to provide a config file as an input, which results in an ready-to-use event log. Use the [config file](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/MIMIC_LOG_CONFIG.yml) in this repository to retrieve an event log by executing the following command: ```python extract_log.py --config MIMIC_Config.yml```. Some post-processing is required, which is conducted in [this jupyter notebook](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/0_MIMIC-IV_Generation.ipynb). After that, the other jupyter notebooks can be executed with the MIMIC event log.
 
 
-As mentioned in the paper, the following presents detailed results regarding the detection of recurring activities and change pattern results for the MIMIC event log. First, the results of the vectors dfr/dpr representing the directly follows and directly preceding ratios for all activities in MIMIC and Sepsis. The repetition score is then the sum of one row, which are also illustrated below. The matrices are supposed to be read row-wise. So 
+As mentioned in the paper, the following presents detailed results regarding the detection of recurring activities and change pattern results for the MIMIC event log. First, the results of the vectors dfr/dpr representing the directly follows and directly preceding ratios for all activities in MIMIC and Sepsis are shown. The repetition score is then the sum of one row, which are also illustrated below. The matrices are supposed to be read row-wise. For example, the "Measurement" activity in Tab. 1 follows "START Invasive Ventilation" in 84.5% of the occurences of "START Invasive Ventilation". Tab. 1 and Tab. 2 show, that the "Measurement" is mostly conducted before the START and after the END of a treatment activity. Tab. 3 and Tab. 4 show the respective results for Sepsis.
 
 
 |![alt text](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/Evaluation/dfr_MIMIC.PNG?raw=true)|
 |:--:| 
-| *Directly-Follows ratios for activities in MIMIC* |
+| *Tab. 1 Directly-Follows ratios for activities in MIMIC* |
 
 |![alt text](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/Evaluation/dpr_MIMIC.PNG?raw=true)|
 |:--:| 
-| *Directly-Precedes ratios for activities in MIMIC* |
+| *Tab. 2 Directly-Precedes ratios for activities in MIMIC* |
 
 ![alt text](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/Evaluation/dfr_Sepsis.PNG?raw=true)
 |:--:| 
-| *Directly-Follows ratios for activities in MIMIC* |
+| *Tab. 3 Directly-Follows ratios for activities in MIMIC* |
 
 ![alt text](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/Evaluation/dfr_Sepsis.PNG?raw=true)
 |:--:| 
-| *Directly-Precedes ratios for activities in MIMIC* |
+| *Tab. 4 Directly-Precedes ratios for activities in MIMIC* |
 
 ![alt text](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/Evaluation/rep_score_MIMIC.PNG?raw=true)|![alt text](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/Evaluation/rep_score_Sepsis.PNG?raw=true)
 :-------------------------:|:-------------------------:
- *Repetition scores for all activities in MIMIC* | *Repetition scores for all activities in Sepsis* 
+ *Tab. 5 Repetition scores for all activities in MIMIC* | *Tab. 6 Repetition scores for all activities in Sepsis* 
 
 
 
 
 ![alt text](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/Evaluation/MIMIC_PM_RAW.png?raw=true)
 |:--:| 
-| *Enhanced process model with change patterns detected on the raw MIMIC event log* |
+| *Fig. 1 Enhanced process model with change patterns detected on the raw MIMIC event log* |
 
 
 ![alt text](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/Evaluation/MIMIC_PM.png?raw=true)
 |:--:| 
-| *Enhanced process model with change patterns detected on the raw Sepsis event log* |
+| *Fig. 2 Enhanced process model with change patterns detected on the raw Sepsis event log* |
 
 ![alt text](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/Evaluation/matrix_MIMIC.PNG?raw=true)
 |:--:| 
-| *Change Pattern Matrix of selected event attributes and relations independent of a trace variant* |
+| *Fig. 3 Change Pattern Matrix of selected event attributes and relations independent of a trace variant* |
 

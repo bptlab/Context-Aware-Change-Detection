@@ -44,7 +44,7 @@ The following figures show detailed results of the change pattern detection in M
 |:--:| 
 | *Fig. 1 Enhanced process model with change patterns detected on the raw MIMIC event log* |
 
-Fig. 2 illustrates an enhanced process model with a few change patterns identified based on the transformed event log. As for Sepsis, more change patterns with increased effect sizes could be detected. Especially the measurements associated to the "Dialysis" activities have high effect sizes (0.78-0.88), where Blood Urea Nitrogene (BUN) decreases after dialysis and increases again, before "Dialysis" is conducted again. This looping pattern could not be identified before. Furthermore, the process mostly starts with measurements before Invasive Ventilation is conducted. It can also be seen, that "Invasive Ventilation" is conducted until the end of treatment and "Dialysis" is repeated multiple times during treatment. Thus, the structure of the process model improved as well and more insights regarding changing patterns could be derived. Add medical evidence --> creatinine/BUN increase/decrease + BP increase due to dialysis
+Fig. 2 illustrates an enhanced process model with a few change patterns identified based on the transformed event log. As for Sepsis, more change patterns with increased effect sizes could be detected. Especially the measurements associated to the "Dialysis" activities have high effect sizes (0.78-0.88), where Blood Urea Nitrogene (BUN) decreases after dialysis and increases again, before "Dialysis" is conducted again [1]. This looping pattern could not be identified before. Furthermore, the process mostly starts with measurements before Invasive Ventilation is conducted. It can also be seen, that "Invasive Ventilation" is conducted until the end of treatment and "Dialysis" is repeated multiple times during treatment. Thus, the structure of the process model improved as well and more insights regarding changing patterns could be derived. 
 
 ![alt text](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/Evaluation/MIMIC_PM.png?raw=true)
 |:--:| 
@@ -56,3 +56,9 @@ Fig. 3 shows another view of the change detection cube, which allows to see two-
 |:--:| 
 | *Fig. 3 Change Pattern Matrix of selected event attributes and relations independent of a trace variant* |
 
+
+[1] Schiffl, H.: Discontinuation of renal replacement therapy in critically ill patients
+with severe acute kidney injury: predictive factors of renal function recovery. Int
+Urol Nephrol 50(10), 1845–1851 (Oct 2018)
+
+[2] Inrig JK. Intradialytic hypertension: a less-recognized cardiovascular complication of hemodialysis. Am J Kidney Dis. 2010 Mar;55(3):580-9. doi: 10.1053/j.ajkd.2009.08.013. Epub 2009 Oct 22. PMID: 19853337; PMCID: PMC2830363.

@@ -7,7 +7,7 @@ This repository provides the implementation and further evaluation details of th
 
 ### Sepsis
 
-The Sepsis dataset provides an event log representing the hospital treatment process of patients having sepsis (https://data.4tu.nl/articles/dataset/Sepsis_Cases_-_Event_Log/12707639). 
+The Sepsis dataset provides an event log representing the hospital treatment process of patients having [sepsis](https://data.4tu.nl/articles/dataset/Sepsis_Cases_-_Event_Log/12707639). 
 It includes laboratory measurements as recurring activities, where the result of the measurement is stored as an event attribute. The event log includes 1,050 cases with 15,214 events representing 16 activities.
 
 ### MIMIC-IV
@@ -51,8 +51,10 @@ Tab. 5 and Tab. 6 show the repetition scores, which are the average scores of th
 ![alt text](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/Evaluation/rep_score_MIMIC.PNG?raw=true)|![alt text](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/Evaluation/rep_score_Sepsis.PNG?raw=true)
 :-------------------------:|:-------------------------:
  *Tab. 5 Repetition scores for all activities in MIMIC* | *Tab. 6 Repetition scores for all activities in Sepsis* 
+ 
+ ### MIMIC Process Models
 
-The following figures show detailed results of the change pattern detection in MIMIC. Similar to the presentation in the paper for Sepsis, Fig. 1 and Fig. 2 show a process model enhanced with change patterns. Fig. 1 illustrates a process model without the detection and transformation of recurring activities and Fig. 2 shows then the process model based on the transformed event log. It can be seen, that the "Measurement" activity is highly recurring and acts as a centrail point in the process, which is also represented as high values in dfr/dpr. Thus, the insights of process discovery are very limited. This is the case for the change pattern detection as well, where a decrease of Anion Gap was idnetified with a very low test statistic of -0.13, meaning that there is a very small indication of a value change only. 
+The following figures show detailed results of the change pattern detection in MIMIC. Fig. 1 and Fig. 2 show a process model enhanced with change patterns. Fig. 1 illustrates a process model without the detection and transformation of recurring activities and Fig. 2 shows then the process model based on the transformed event log. It can be seen, that the "Measurement" activity is highly recurring and acts as a centrail point in the process, which is also represented as high values in dfr/dpr. Thus, the insights of process discovery are very limited. This is the case for the change pattern detection as well, where a decrease of Anion Gap was idnetified with a very low test statistic of -0.13, meaning that there is a very small indication of a value change only. 
 
 
 ![alt text](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/Evaluation/MIMIC_PM_RAW.png?raw=true)
@@ -70,6 +72,9 @@ Fig. 3 shows another view of the change detection cube, which allows to see two-
 ![alt text](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/Evaluation/matrix_MIMIC.PNG?raw=true)
 |:--:| 
 | *Fig. 3 Change Pattern Matrix of selected event attributes and relations independent of a trace variant* |
+
+
+### Sepsis Process Models
 
 
 [1] Schiffl, H.: Discontinuation of renal replacement therapy in critically ill patients

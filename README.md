@@ -3,6 +3,21 @@
 ## Introduction
 This repository provides the implementation and further evaluation details of the paper entitled <b>Context-Aware Change Pattern Detection in Event Attributes of Recurring Activities</b>. The implementation includes four jupyter notebooks and a modified [pm4py implementation](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/pm4py.zip). The jupyter notebooks enumerated from 1 to 3 represent the approach of the paper, starting with the [detection and transformation of recurring events](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/1_Repetitive_Activity_Detection_Context_Identification.ipynb). Then, the [change pattern detection](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/2_Applying_Change_Detection.ipynb) is applied in the second jupyter notebook. The third jupyter notebook includes the [UI](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/3_UI.ipynb) to interact with the identified change patterns and to illustrate them in a process model. The modified pm4py package is only required, if one wants to visualize change patterns in the process model.
 
+## Datasets
+
+### Sepsis
+
+The Sepsis dataset provides an event log representing the hospital treatment process of patients having sepsis (https://data.4tu.nl/articles/dataset/Sepsis_Cases_-_Event_Log/12707639). 
+It includes laboratory measurements as recurring activities, where the result of the measurement is stored as an event attribute. The event log includes 1,050 cases with 15,214 events representing 16 activities.
+
+### MIMIC-IV
+
+MIMIC-IV is a relational database including hospital processes of different patients, with procedures performed, medications given, laboratory values taken, image analysis conducted, and more. Its purpose is to support research in healthcare and is therefore publicly available (https://mimic-iv.mit.edu/). 
+
+The event log extracted from MIMIC-IV incorporates common activities in an intensive care unit for acute kidney failure patients, including different forms of ventilation and dialysis. Additionally, laboratory measurements are recorded, including nine measurements conducted at one activity ``Measurement'', which are important for monitoring the disease progression, such as creatinine and urea nitrogen. It contains 3,528 hospital process instances with 26,370 events representing nine different treatment activities.
+
+The event log from MIMIC-IV cannot be shared directly due to a required data use agreement. Thus, we provide an event log generation script in the already mentioned GitHub repository.
+
 ## Reproducing Sepsis and MIMIC results
 To reproduce the results of the Sepsis event log, the scripts are ready to be executed, as the Sepsis event log is already available in the [Logs](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/tree/main/Logs) folder. The [outputs](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/tree/main/Outputs) of the preprocessing steps, including the transformed event log and the detected change patterns, are also already available for Sepsis, so one can immediately execute the [UI](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/3_UI.ipynb) jupyter notebook if desired. 
 

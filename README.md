@@ -56,11 +56,17 @@ Tab. 5 and Tab. 6 show the repetition scores, which are the average scores of th
 
 We now compare the results of the transformed event logs to the results of the original event logs. With the identified recurring activities and contexts of interest, the methods of change pattern detection can be applied. Without considering their context, the resulting change patterns can be analysed only in relations from the activities to themselves. This is illustrated in Fig. 1 for the Sepsis event log, where the discovered process model is enhanced with change patterns of event attribute values CRP and Leucocytes, respectively. 
 
-![alt text](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/Sepsis_Original_Enhanced_BOLD.PNG?raw=true)
+![alt text](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/Evaluation/Sepsis_Original_Enhanced_BOLD.PNG?raw=true)
 |:--:| 
 | *Fig. 1 Enhanced process model with change patterns detected on the raw Sepsis event log* |
 
+The dotted lines illustrate change patterns when the activities are performed multiple times, where the blue colour illustrates a decrease of the values of CRP and Leucocytes. Please note, that we speak of activities, e.g. "CRP", when quoted and of event attributes, such as CRP, when written without quotes. As the event attributes are not related to other activities, only the relation from the recurring activities to themselves can be considered. The number of statistically significant p < 0.05 results for the original Sepsis event log is only one, which is the relation from "Leucocytes" to "Leucocytes". We also observe small effect sizes (0.13 for Leucocytes and 0.03 for CRP (not statistically significant!)), expressing that there is only a small indication of value decreases. 
 
+![alt text](https://github.com/bptlab/Context-Aware-Change-Pattern-Detection/blob/main/Evaluation/Sepsis_New_Enhanced_BOLD.PNG?raw=true)
+|:--:| 
+| *Fig. 2 Enhanced process model with change patterns detected on the transformed Sepsis event log* |
+
+Fig.2 presents the discovered process model for the transformed Sepsis event log. It includes the transformed measurement activities describing their context, such as "CRP AFTER ER Sepsis Triage" and "Leucocytes BEFORE Release A". With that, multiple activities include the event attribute representing the respective measurement (Leucocytes/CRP) now. It can be observed, that, dependent on where the measurements are conducted, the change patterns differ. For example, looking at the CRP measurements, CRP has a tendency to increase from "CRP AFTER ER Sepsis Triage" to "CRP Admission NC" and then drastically decreases from "CRP AFTER Admission NC" to "CRP BEFORE Release A" for almost all patients with an effect size of $-0.97$.
  
  
  ### MIMIC Process Models
